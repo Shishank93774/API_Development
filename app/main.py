@@ -4,7 +4,7 @@ from .database import engine
 from .routers import post, user, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
 
-models.Base.metadata.create_all(bind=engine) #uncomment this line to create the tables
+# models.Base.metadata.create_all(bind=engine) #uncomment this line to create the tables
 
 origins = [
     "*"
@@ -28,5 +28,5 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "Hello"}
+    return {"message": "Hello World!!"}
 
