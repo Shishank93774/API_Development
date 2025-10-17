@@ -37,6 +37,7 @@ def create_posts(post: schemas.PostCreate, db: Session = Depends(database.get_db
     # post = cursor.fetchone()
     # conn.commit()
     post_dict = post.model_dump()
+    print(post_dict)
     post = models.Post(**post_dict, owner_id=current_user.id)
     db.add(post)
     db.commit()
